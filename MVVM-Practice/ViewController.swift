@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import Bond
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        textField.bnd_text.bind(to: label.bnd_text)
+        
     }
 
     override func didReceiveMemoryWarning() {
