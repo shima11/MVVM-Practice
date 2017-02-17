@@ -22,29 +22,15 @@
 //  THE SOFTWARE.
 //
 
-import UIKit
-import ReactiveKit
-import Foundation
-
-#if os(iOS)
-
-public extension UIDatePicker {
-
-  public var bnd_date: DynamicSubject<UIDatePicker, Date> {
-    return DynamicSubject(
-      target: self,
-      signal: bnd_controlEvents(.valueChanged).eraseType(),
-      get: { $0.date },
-      set: { $0.date = $1 }
-    )
-  }
-}
-
-extension UIDatePicker: BindableProtocol {
-
-  public func bind(signal: Signal<Date, NoError>) -> Disposable {
-    return bnd_date.bind(signal: signal)
-  }
-}
-
+#if os(OSX)
+  import AppKit
+#else
+  import UIKit
 #endif
+
+public extension NSLayoutConstraint {
+
+  public var bnd_isActive: Bond<NSLayoutConstraint, Bool> {
+    return Bond(target: self) { $0.isActive = $1 }
+  }
+}

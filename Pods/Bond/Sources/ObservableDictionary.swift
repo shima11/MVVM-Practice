@@ -96,7 +96,7 @@ public class ObservableDictionary<Key: Hashable, Value>: Collection, SignalProto
 
 extension ObservableDictionary: Deallocatable {
 
-  public var deallocated: Signal<Void, NoError> {
+  public var bnd_deallocated: Signal<Void, NoError> {
     return subject.disposeBag.deallocated
   }
 }
@@ -166,7 +166,7 @@ extension MutableObservableDictionary: BindableProtocol {
 
   public func bind(signal: Signal<ObservableDictionaryEvent<Key, Value>, NoError>) -> Disposable {
     return signal
-      .take(until: deallocated)
+      .take(until: bnd_deallocated)
       .observeNext { [weak self] event in
         guard let s = self else { return }
         s.dictionary = event.source.dictionary
