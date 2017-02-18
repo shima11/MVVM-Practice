@@ -9,13 +9,20 @@
 import Foundation
 import Bond
 
-class ViewModel {
+class ViewModel: NSObject {
     
-    var text = ""
-    var model = Observable(Model())
-    
-    init() {
+    var text = Observable<String?>("")
+    var model = Model()
+        
+    override init() {
+        super.init()
+        
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.timeUpdate(_:)), userInfo: nil, repeats: true)
         
     }
     
+    func timeUpdate(_ timer: Timer) {
+        text.value = Date().description
+    }
+
 }

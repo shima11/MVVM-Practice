@@ -13,12 +13,19 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    var viewModel = ViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        textField.bnd_text.bind(to: label.bnd_text)
+        textField.bnd_text.map({ str in
+            return "input:" + str!
+        }).bind(to: label.bnd_text)
+        
+        viewModel.text.bind(to: dateLabel.bnd_text)
+        
         
     }
 
