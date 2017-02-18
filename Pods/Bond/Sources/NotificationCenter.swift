@@ -22,20 +22,20 @@
 //  THE SOFTWARE.
 //
 
-import QuartzCore
+import Foundation
 import ReactiveKit
 
-public extension ReactiveExtensions where Base: CALayer {
-
-  public var opacity: Bond<Float> {
-    return bond { $0.opacity = $1 }
-  }
-
-  public var backgroundColor: Bond<CGColor?> {
-    return bond { $0.backgroundColor = $1 }
-  }
-
-  public var contents: Bond<AnyObject?> {
-    return bond { $0.contents = $1 }
+extension NotificationCenter {
+  
+  /// Observe notifications using a signal.
+  public func bnd_notification(name: NSNotification.Name, object: AnyObject? = nil) -> Signal<Notification, NoError> {
+    return Signal { observer in
+      let subscription = self.addObserver(forName: name, object: object, queue: nil, using: { notification in
+        observer.next(notification)
+      })
+      return BlockDisposable {
+        self.removeObserver(subscription)
+      }
+    }
   }
 }
