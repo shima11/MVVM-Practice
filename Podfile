@@ -6,7 +6,7 @@ target 'MVVM-Practice' do
   use_frameworks!
 
   # Pods for MVVM-Practice
-  pod ‘Bond’, ‘~> 5.0’
+  pod ‘Bond’, ‘~> 6.0’
 
   target 'MVVM-PracticeTests' do
     inherit! :search_paths

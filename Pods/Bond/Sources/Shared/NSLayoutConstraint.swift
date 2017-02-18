@@ -22,8 +22,17 @@
 //  THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
+#if os(OSX)
+  import AppKit
+#else
+  import UIKit
+#endif
 
-@interface NSObject (Bond)
-- (void)_bnd_dealloc;
-@end
+import ReactiveKit
+
+public extension ReactiveExtensions where Base: NSLayoutConstraint {
+
+  public var isActive: Bond<Bool> {
+    return bond { $0.isActive = $1 }
+  }
+}

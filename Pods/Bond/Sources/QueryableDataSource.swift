@@ -1,7 +1,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2016 Srdan Rasic (@srdanrasic)
+//  Copyright (c) 2017 Tony Arnold (@tonyarnold)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -22,17 +22,16 @@
 //  THE SOFTWARE.
 //
 
-#import "NSObject+Bond.h"
+public protocol QueryableDataSourceProtocol: DataSourceProtocol {
+  associatedtype Item
+  associatedtype Index
 
-@implementation NSObject (Bond)
-
-- (void)_bnd_dealloc {
-
-  SEL selector = NSSelectorFromString(@"_bnd_swift_dealloc");
-  if ([self respondsToSelector:selector]) {
-    ((void (*)(id, SEL))[self methodForSelector:selector])(self, selector);
-  }
-  [self _bnd_dealloc];
+  func item(at index: Index) -> Item
 }
 
-@end
+extension Array: QueryableDataSourceProtocol {
+
+  public func item(at index: Int) -> Iterator.Element {
+    return self[index]
+  }
+}
