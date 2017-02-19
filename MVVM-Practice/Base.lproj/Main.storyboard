@@ -27,6 +27,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCG-In-Q7A">
+                                <rect key="frame" x="16" y="95" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K0q-Mf-Lua">
+                                <rect key="frame" x="0.0" y="124" width="375" height="543"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="g5H-5w-zhO">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g5H-5w-zhO" id="h7f-Gh-glF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sk7-nb-g0N">
                                 <rect key="frame" x="16" y="66" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -37,16 +57,25 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cNz-yi-NXp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="070-DA-mAV"/>
+                            <constraint firstItem="K0q-Mf-Lua" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="30K-0I-Tzb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="K0q-Mf-Lua" secondAttribute="bottom" id="5J5-BT-uXH"/>
                             <constraint firstItem="cNz-yi-NXp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Bor-DF-bIo"/>
+                            <constraint firstItem="hCG-In-Q7A" firstAttribute="top" secondItem="sk7-nb-g0N" secondAttribute="bottom" constant="8" id="Qxw-u8-CQM"/>
                             <constraint firstAttribute="trailing" secondItem="cNz-yi-NXp" secondAttribute="trailing" constant="16" id="TYN-Fn-OoI"/>
+                            <constraint firstAttribute="trailing" secondItem="hCG-In-Q7A" secondAttribute="trailing" constant="16" id="atx-Ts-TSm"/>
                             <constraint firstItem="cNz-yi-NXp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dpb-Av-3vJ"/>
+                            <constraint firstItem="hCG-In-Q7A" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="j4U-7T-nLi"/>
+                            <constraint firstAttribute="trailing" secondItem="K0q-Mf-Lua" secondAttribute="trailing" id="jn2-Ke-vv8"/>
                             <constraint firstAttribute="trailing" secondItem="sk7-nb-g0N" secondAttribute="trailing" constant="16" id="kWd-Ha-Xvo"/>
+                            <constraint firstItem="K0q-Mf-Lua" firstAttribute="top" secondItem="hCG-In-Q7A" secondAttribute="bottom" constant="8" id="oIs-qA-2aM"/>
                             <constraint firstItem="sk7-nb-g0N" firstAttribute="top" secondItem="cNz-yi-NXp" secondAttribute="bottom" constant="8" id="ry4-ED-wOa"/>
                             <constraint firstItem="sk7-nb-g0N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="sv6-DJ-pUV"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dateLabel" destination="hCG-In-Q7A" id="v3u-os-eOd"/>
                         <outlet property="label" destination="sk7-nb-g0N" id="2ep-xM-Ehx"/>
+                        <outlet property="tableView" destination="K0q-Mf-Lua" id="DOh-78-RrV"/>
                         <outlet property="textField" destination="cNz-yi-NXp" id="KzP-KI-MGh"/>
                     </connections>
                 </viewController>

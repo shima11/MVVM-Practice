@@ -12,17 +12,22 @@ import Bond
 class ViewModel: NSObject {
     
     var text = Observable<String?>("")
-    var model = Model()
+    var models = MutableObservableArray([Model]())
         
     override init() {
         super.init()
         
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.timeUpdate(_:)), userInfo: nil, repeats: true)
-        
+    
     }
     
     func timeUpdate(_ timer: Timer) {
         text.value = Date().description
+        
+        let model = Model()
+        model.text = Date().description
+        models.append(model)
+        
     }
 
 }
