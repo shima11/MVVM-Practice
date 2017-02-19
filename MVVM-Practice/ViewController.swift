@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         viewModel.text.bind(to: dateLabel.bnd_text)
         
 //        tableView.dataSource = self
-        tableView.delegate = self
+//        tableView.delegate = self
         tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
 
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
 
 //extension ViewController: UITableViewDataSource {
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return datas.count
+//        return 1
 //    }
 //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -54,6 +54,6 @@ class ViewController: UIViewController {
 //    }
 //}
 
-extension ViewController: UITableViewDelegate {
-    
-}
+//extension ViewController: UITableViewDelegate {
+//    
+//}

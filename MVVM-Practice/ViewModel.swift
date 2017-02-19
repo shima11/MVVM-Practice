@@ -8,6 +8,8 @@
 
 import Foundation
 import Bond
+import Alamofire
+import SwiftyJSON
 
 class ViewModel: NSObject {
     
@@ -19,6 +21,7 @@ class ViewModel: NSObject {
         
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.timeUpdate(_:)), userInfo: nil, repeats: true)
     
+        fetchAPI()
     }
     
     func timeUpdate(_ timer: Timer) {
@@ -28,6 +31,19 @@ class ViewModel: NSObject {
         model.text = Date().description
         models.append(model)
         
+    }
+    
+    func fetchAPI() {
+        let url = URL(string: "https://qiita.com/api/v2/items")
+        Alamofire.request(url!).responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("success:\(json)")
+            case .failure(let error):
+                print("error:\(error)")
+            }
+        })
     }
 
 }
