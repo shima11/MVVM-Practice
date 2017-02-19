@@ -1,18 +1,24 @@
 PODS:
+  - Alamofire (4.3.0)
   - Bond (5.4.6):
     - Diff (~> 0.4)
     - ReactiveKit (~> 3.2)
   - Diff (0.5.0)
   - ReactiveKit (3.3.1)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.0)
   - Bond (~> 5.0)
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   Bond: 7cc794569520e611e46d7d77c35d568a6b5ded00
   Diff: eceb93a3adf508574ba9b8560da185ace83de055
   ReactiveKit: 27df79c2e2f0771aef1061551fcd7e82b92066e9
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 16ed0e71c55ee181bdfed92f75bdee25bdcaa1ee
+PODFILE CHECKSUM: abbc680f473456b6a6ec674bee714c907fae0ce5
 
 COCOAPODS: 1.2.0

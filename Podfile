@@ -7,6 +7,8 @@ target 'MVVM-Practice' do
 
   # Pods for MVVM-Practice
   pod ‘Bond’, ‘~> 5.0’
+  pod 'Alamofire', '~> 4.0'
+  pod 'SwiftyJSON’
 
   target 'MVVM-PracticeTests' do
     inherit! :search_paths
