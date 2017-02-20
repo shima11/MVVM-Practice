@@ -18,15 +18,24 @@ class ViewController: UIViewController {
     
     var viewModel = ViewModel()
     var datas = ObservableArray<Model>()
+    var qiitaItems = ObservableArray<QiitaItem>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        datas = viewModel.models
-        datas.bind(to: tableView){ datas, indexPath, tableView in
+//        datas = viewModel.models
+//        datas.bind(to: tableView){ datas, indexPath, tableView in
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+//            let model = datas[indexPath.row]
+//            cell.textLabel?.text = model.text
+//            return cell
+//        }
+        
+        qiitaItems = viewModel.qiitaItems
+        qiitaItems.bind(to: tableView){ items, indexPath, tableView in
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            let model = datas[indexPath.row]
-            cell.textLabel?.text = model.text
+            let model = items[indexPath.row]
+            cell.textLabel?.text = model.title
             return cell
         }
         

@@ -19,6 +19,7 @@
 		D4391E271E57279C00A35ACA /* MVVM_PracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4391E261E57279C00A35ACA /* MVVM_PracticeUITests.swift */; };
 		D4391E351E58239200A35ACA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4391E341E58239200A35ACA /* ViewModel.swift */; };
 		D4391E371E58258100A35ACA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4391E361E58258100A35ACA /* Model.swift */; };
+		D4391E391E5A073A00A35ACA /* QiitaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4391E381E5A073A00A35ACA /* QiitaItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		D4391E281E57279C00A35ACA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4391E341E58239200A35ACA /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		D4391E361E58258100A35ACA /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		D4391E381E5A073A00A35ACA /* QiitaItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaItem.swift; sourceTree = "<group>"; };
 		DA498AF74F44AB1B89E46FAB /* Pods_MVVM_PracticeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_PracticeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAED38424FC1A4C282EE7D13 /* Pods-MVVM-PracticeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-PracticeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM-PracticeTests/Pods-MVVM-PracticeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB0227FF648634CCAC6D4585 /* Pods-MVVM-PracticeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-PracticeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM-PracticeUITests/Pods-MVVM-PracticeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				D4391E081E57279C00A35ACA /* ViewController.swift */,
 				D4391E341E58239200A35ACA /* ViewModel.swift */,
 				D4391E361E58258100A35ACA /* Model.swift */,
+				D4391E381E5A073A00A35ACA /* QiitaItem.swift */,
 				D4391E0A1E57279C00A35ACA /* Main.storyboard */,
 				D4391E0D1E57279C00A35ACA /* Assets.xcassets */,
 				D4391E0F1E57279C00A35ACA /* LaunchScreen.storyboard */,
@@ -453,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4391E091E57279C00A35ACA /* ViewController.swift in Sources */,
+				D4391E391E5A073A00A35ACA /* QiitaItem.swift in Sources */,
 				D4391E351E58239200A35ACA /* ViewModel.swift in Sources */,
 				D4391E071E57279C00A35ACA /* AppDelegate.swift in Sources */,
 				D4391E371E58258100A35ACA /* Model.swift in Sources */,
